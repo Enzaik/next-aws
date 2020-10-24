@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 
-import { LazyLoadImage } from 'react-lazy-load-image-component';
+// import { LazyLoadImage } from 'react-lazy-load-image-component';
 import Transition from '../Transition';
 
 function Dropdown({ items, type = 'iconless', triggererType }) {
@@ -9,30 +9,19 @@ function Dropdown({ items, type = 'iconless', triggererType }) {
 
   useEffect(() => {
     const onBodyClick = (event) => {
-      // check if element that was clicked is inside of ref'd component
-      // if so no action is required from this event listener so exit
       if (ref.current.contains(event.target)) {
         return;
       }
-      // else close the dropdown
       setIsOpen(false);
     };
 
-    // add event listener
     document.body.addEventListener('click', onBodyClick);
-
-    // CLEANUP
-    // remove event listener
     return () => {
       document.body.removeEventListener('click', onBodyClick);
     };
   }, []);
   const dropdown = (
     <>
-      {/* <button
-        onClick={() => setIsOpen(false)}
-        className={` ${isOpen ? 'fixed' : 'hidden'} top-0 left-0 bottom-0 right-0 h-full w-full outline-none`}
-      ></button> */}
       <Transition
         show={isOpen}
         enter="transition ease-out duration-100 transform"
@@ -102,7 +91,6 @@ function Dropdown({ items, type = 'iconless', triggererType }) {
   if (triggererType === 'selector') {
     return (
       <div ref={ref} className="px-3 mt-6 relative inline-block text-left">
-        {/* Dropdown menu toggle, controlling the show/hide state of dropdown menu. */}
         <div>
           <button
             type="button"
