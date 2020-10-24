@@ -20,6 +20,7 @@ function Dropdown({ items, type = 'iconless', triggererType }) {
       document.body.removeEventListener('click', onBodyClick);
     };
   }, []);
+
   const dropdown = (
     <>
       <Transition

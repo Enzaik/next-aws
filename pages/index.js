@@ -1,8 +1,7 @@
-/* eslint react/prop-types: 0, react/react-in-jsx-scope: 0 */
-import { useState } from 'react';
-import Nav from '../components/nav';
-import Transition from '../Transition';
+/* eslint react/prop-types: 0, react/react-in-jsx-scope: 0  jsx-a11y/anchor-is-valid:0 */
+
 import Dropdown from '../components/Dropdown';
+import Project from '../components/Project';
 
 export default function IndexPage() {
   return (
@@ -45,7 +44,7 @@ export default function IndexPage() {
                   aria-label="Close sidebar"
                 >
                   <svg className="h-6 w-6 text-white" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
                   </svg>
                 </button>
               </div>
@@ -72,9 +71,9 @@ export default function IndexPage() {
                         stroke="currentColor"
                       >
                         <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
                           d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
                         />
                       </svg>
@@ -94,9 +93,9 @@ export default function IndexPage() {
                         stroke="currentColor"
                       >
                         <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
                           d="M4 6h16M4 10h16M4 14h16M4 18h16"
                         />
                       </svg>
@@ -116,9 +115,9 @@ export default function IndexPage() {
                         stroke="currentColor"
                       >
                         <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
                           d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
                         />
                       </svg>
@@ -192,7 +191,7 @@ export default function IndexPage() {
 
               {/* Sidebar Search */}
               <div className="px-3 mt-5">
-                <label for="search" className="sr-only">
+                <label htmlFor="search" className="sr-only">
                   Search
                 </label>
                 <div className="mt-1 relative rounded-md shadow-sm">
@@ -205,9 +204,9 @@ export default function IndexPage() {
                       fill="currentColor"
                     >
                       <path
-                        fill-rule="evenodd"
+                        fillRule="evenodd"
                         d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                        clip-rule="evenodd"
+                        clipRule="evenodd"
                       />
                     </svg>
                   </div>
@@ -234,9 +233,9 @@ export default function IndexPage() {
                       stroke="currentColor"
                     >
                       <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
                         d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
                       />
                     </svg>
@@ -256,9 +255,9 @@ export default function IndexPage() {
                       stroke="currentColor"
                     >
                       <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
                         d="M4 6h16M4 10h16M4 14h16M4 18h16"
                       />
                     </svg>
@@ -278,9 +277,9 @@ export default function IndexPage() {
                       stroke="currentColor"
                     >
                       <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
                         d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
                       />
                     </svg>
@@ -337,9 +336,9 @@ export default function IndexPage() {
               <svg
                 className="h-6 w-6"
                 fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
@@ -349,15 +348,15 @@ export default function IndexPage() {
             <div className="flex-1 flex justify-between px-4 sm:px-6 lg:px-8">
               <div className="flex-1 flex">
                 <form className="w-full flex md:ml-0" action="#" method="GET">
-                  <label for="search_field" className="sr-only">
+                  <label htmlFor="search_field" className="sr-only">
                     Search
                   </label>
                   <div className="relative w-full text-gray-400 focus-within:text-gray-600">
                     <div className="absolute inset-y-0 left-0 flex items-center pointer-events-none">
                       <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
                         <path
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
+                          fillRule="evenodd"
+                          clipRule="evenodd"
                           d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
                         />
                       </svg>
@@ -461,7 +460,7 @@ export default function IndexPage() {
               </div>
             </div>
           </div>
-          <main className="flex-1 relative z-0 overflow-y-auto focus:outline-none" tabindex="0">
+          <main className="flex-1 relative z-0 overflow-y-auto focus:outline-none">
             {/* Page title & actions */}
             <div className="border-b border-gray-200 px-4 py-4 sm:flex sm:items-center sm:justify-between sm:px-6 lg:px-8">
               <div className="flex-1 min-w-0">
@@ -545,9 +544,9 @@ export default function IndexPage() {
                       fill="currentColor"
                     >
                       <path
-                        fill-rule="evenodd"
+                        fillRule="evenodd"
                         d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                        clip-rule="evenodd"
+                        clipRule="evenodd"
                       />
                     </svg>
                   </a>
@@ -575,65 +574,9 @@ export default function IndexPage() {
                     </tr>
                   </thead>
                   <tbody className="bg-white divide-y divide-gray-100">
-                    <tr>
-                      <td className="px-6 py-3 max-w-0 w-full whitespace-no-wrap text-sm leading-5 font-medium text-gray-900">
-                        <div className="flex items-center space-x-3 lg:pl-2">
-                          <div className="flex-shrink-0 w-2.5 h-2.5 rounded-full bg-pink-600"></div>
-                          <a href="#" className="truncate hover:text-gray-600">
-                            <span>
-                              GraphQL API <span className="text-gray-500 font-normal">in Engineering</span>{' '}
-                            </span>
-                          </a>
-                        </div>
-                      </td>
-                      <td className="px-6 py-3 text-sm leading-5 text-gray-500 font-medium">
-                        <div className="flex items-center space-x-2">
-                          <div className="flex flex-shrink-0 -space-x-1">
-                            <img
-                              className="max-w-none h-6 w-6 rounded-full text-white shadow-solid"
-                              src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                              alt=""
-                            ></img>
-
-                            <img
-                              className="max-w-none h-6 w-6 rounded-full text-white shadow-solid"
-                              src="https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                              alt=""
-                            ></img>
-
-                            <img
-                              className="max-w-none h-6 w-6 rounded-full text-white shadow-solid"
-                              src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                              alt=""
-                            ></img>
-
-                            <img
-                              className="max-w-none h-6 w-6 rounded-full text-white shadow-solid"
-                              src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                              alt=""
-                            ></img>
-                          </div>
-
-                          <span className="flex-shrink-0 text-xs leading-5 font-medium">+8</span>
-                        </div>
-                      </td>
-                      <td className="hidden md:table-cell px-6 py-3 whitespace-no-wrap text-sm leading-5 text-gray-500 text-right">
-                        March 17, 2020
-                      </td>
-                      <td className="pr-6">
-                        <Dropdown
-                          triggererType="menurow"
-                          items={[
-                            { text: 'View Profile', type: 'link' },
-                            { text: 'Settings', type: 'link' },
-                            { text: 'Notifications', type: 'link' },
-                            { text: undefined, type: 'divider' },
-                            { text: 'Get Desktop app', type: 'link' },
-                            { text: 'Notifications', type: 'link' },
-                          ]}
-                        />
-                      </td>
-                    </tr>
+                    <Project />
+                    <Project />
+                    <Project />
 
                     {/* More project rows... */}
                   </tbody>
