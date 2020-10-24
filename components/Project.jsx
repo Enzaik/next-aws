@@ -8,8 +8,8 @@ import Dropdown from './Dropdown';
 export default function Project() {
   const getS3Data = async () => {
     AWS.config.update({
-      accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-      secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+      accessKeyId: process.env.AWS_ACCESS_KEY_ID1,
+      secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY1,
       region: 'eu-west-1',
     });
     const s3 = new AWS.S3({ apiVersion: '2006-03-01', params: { Bucket: 'dev-nextenhanced-config' } });
