@@ -3,15 +3,15 @@
 import React from 'react';
 import Dropdown from '../../Dropdown';
 
-export default function Project() {
+export default function Project({ text, helpText, date, color }) {
   return (
     <tr>
       <td className="px-6 py-3 max-w-0 w-full whitespace-no-wrap text-sm leading-5 font-medium text-gray-900">
         <div className="flex items-center space-x-3 lg:pl-2">
-          <div className="flex-shrink-0 w-2.5 h-2.5 rounded-full bg-pink-600"></div>
+          <div className={`flex-shrink-0 w-2.5 h-2.5 rounded-full ${color}`}></div>
           <a href="#" className="truncate hover:text-gray-600">
             <span>
-              GraphQL API <span className="text-gray-500 font-normal">in Engineering</span>{' '}
+              {text} <span className="text-gray-500 font-normal">{helpText}</span>{' '}
             </span>
           </a>
         </div>
@@ -48,7 +48,7 @@ export default function Project() {
         </div>
       </td>
       <td className="hidden md:table-cell px-6 py-3 whitespace-no-wrap text-sm leading-5 text-gray-500 text-right">
-        March 17, 2020
+        {date}
       </td>
       <td className="pr-6">
         <Dropdown triggererType="menurow" />
