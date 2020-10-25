@@ -1,24 +1,9 @@
 /* eslint react/prop-types: 0, react/react-in-jsx-scope: 0 */
 
 import React from 'react';
-import AWS from 'aws-sdk';
-
-import Dropdown from './Dropdown';
+import Dropdown from '../../Dropdown';
 
 export default function Project() {
-  const getS3Data = async () => {
-    AWS.config.update({
-      accessKeyId: process.env.AWS_ACCESS_KEY_ID1,
-      secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY1,
-      region: 'eu-west-1',
-    });
-    const s3 = new AWS.S3({ apiVersion: '2006-03-01', params: { Bucket: 'dev-nextenhanced-config' } });
-    const data = await s3.getObject({ Bucket: 'dev-nextenhanced-config', Key: 'next-config.json' }).promise();
-    const items = JSON.parse(data.Body.toString('utf8'));
-    console.log(items);
-  };
-  getS3Data();
-
   return (
     <tr>
       <td className="px-6 py-3 max-w-0 w-full whitespace-no-wrap text-sm leading-5 font-medium text-gray-900">
@@ -66,17 +51,7 @@ export default function Project() {
         March 17, 2020
       </td>
       <td className="pr-6">
-        <Dropdown
-          triggererType="menurow"
-          items={[
-            { text: 'View Profile', type: 'link' },
-            { text: 'Settings', type: 'link' },
-            { text: 'Notifications', type: 'link' },
-            { text: undefined, type: 'divider' },
-            { text: 'Get Desktop app', type: 'link' },
-            { text: 'Notifications', type: 'link' },
-          ]}
-        />
+        <Dropdown triggererType="menurow" />
       </td>
     </tr>
   );

@@ -1,7 +1,7 @@
 /* eslint react/prop-types: 0, react/react-in-jsx-scope: 0  jsx-a11y/anchor-is-valid:0 */
 
 import Dropdown from '../components/Dropdown';
-import Project from '../components/Project';
+import Projects from '../components/Projects';
 
 export default function IndexPage() {
   return (
@@ -573,13 +573,7 @@ export default function IndexPage() {
                       <th className="pr-6 py-3 border-b border-gray-200 bg-gray-50 text-right text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider"></th>
                     </tr>
                   </thead>
-                  <tbody className="bg-white divide-y divide-gray-100">
-                    <Project />
-                    <Project />
-                    <Project />
-
-                    {/* More project rows... */}
-                  </tbody>
+                  <Projects />
                 </table>
               </div>
             </div>
