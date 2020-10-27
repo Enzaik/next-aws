@@ -11,7 +11,7 @@ export default function Projects() {
       setProjects(projectsData);
     }
     getData();
-    console.log(projects);
+    // console.log(projects);
   }, []);
 
   return (

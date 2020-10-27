@@ -17,10 +17,10 @@
     "eslint-plugin-react": "^7.21.4",
     "eslint-plugin-react-hooks": "^4.1.2",
     "firebase": "^7.24.0",
-    "next": "latest",
+    "next": "^9.5.5",
     "next-on-netlify": "^2.4.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",

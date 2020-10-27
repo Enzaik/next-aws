@@ -148,7 +148,6 @@ function Dropdown({ type = 'iconless', triggererType }) {
       <div ref={ref} className="flex-shrink-0 pr-2">
         <button
           id="pinned-project-options-menu-0"
-          aria-has-popup="true"
           className="w-8 h-8 inline-flex items-center justify-center text-gray-400 rounded-full bg-transparent hover:text-gray-500 focus:outline-none focus:text-gray-500 focus:bg-gray-100 transition ease-in-out duration-150"
           onClick={() => setIsOpen(!isOpen)}
         >
@@ -167,7 +166,6 @@ function Dropdown({ type = 'iconless', triggererType }) {
       <div ref={ref} className="relative flex justify-end items-center">
         <button
           id="project-options-menu-0"
-          aria-has-popup="true"
           type="button"
           className="w-8 h-8 inline-flex items-center justify-center text-gray-400 rounded-full bg-transparent hover:text-gray-500 focus:outline-none focus:text-gray-500 focus:bg-gray-100 transition ease-in-out duration-150"
           onClick={() => setIsOpen(!isOpen)}
