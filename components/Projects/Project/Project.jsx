@@ -7,11 +7,11 @@ export default function Project({ id, text, helpText, date, color }) {
   const getClass = (id) => {
     switch (id) {
       case 'graphql':
-        return `flex-shrink-0 w-2.5 h-2.5 rounded-full ${color}`;
+        return `flex-shrink-0 w-2.5 h-2.5 rounded-full bg-pink-600`;
       case 'ios':
-        return `flex-shrink-0 w-2.5 h-2.5 rounded-full ${color}`;
+        return `flex-shrink-0 w-2.5 h-2.5 rounded-full bg-purple-600`;
       case 'marketing':
-        return `flex-shrink-0 w-2.5 h-2.5 rounded-full ${color}`;
+        return `flex-shrink-0 w-2.5 h-2.5 rounded-full bg-green-600`;
     }
   };
 
