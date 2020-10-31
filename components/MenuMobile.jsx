@@ -58,7 +58,7 @@ function MenuMobile() {
               <div className="absolute top-0 right-0 -mr-14 p-1">
                 <button
                   //   closing button
-                  className="bg-green-400 flex items-center justify-center h-12 w-12 rounded-full focus:outline-none focus:bg-gray-600"
+                  className="flex items-center justify-center h-12 w-12 rounded-full focus:outline-none focus:bg-gray-600"
                   aria-label="Close sidebar"
                   tabIndex="0"
                   onClick={() => setIsOpen(false)}
