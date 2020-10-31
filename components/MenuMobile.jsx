@@ -210,7 +210,7 @@ function MenuMobile() {
                 </div>
                 <input
                   id="search"
-                  className="form-input block w-full pl-9 sm:text-sm sm:leading-5"
+                  className="md:form-input block w-full pl-9 sm:text-sm sm:leading-5"
                   placeholder="Search"
                 ></input>
               </div>
