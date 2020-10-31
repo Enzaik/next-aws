@@ -9,10 +9,10 @@ export const getS3Data = async (configParam) => {
   const s3 = new AWS.S3({
     apiVersion: '2006-03-01',
     params: {
-      Bucket: 'dev-nextenhanced-config',
+      Bucket: 'dev-nextenzaik-config',
     },
   });
-  const data = await s3.getObject({ Bucket: 'dev-nextenhanced-config', Key: 'next-s3-config.json' }).promise();
+  const data = await s3.getObject({ Bucket: 'dev-nextenzaik-config', Key: 'next-s3-config.json' }).promise();
 
   return JSON.parse(data.Body.toString('utf8'))[configParam];
 };
