@@ -7,9 +7,10 @@ export const getS3Data = async (configParam) => {
     secretAccessKey: `${process.env.AWS_SECRET_ACCESS_KEY1}`,
   });
   const s3 = new AWS.S3({
-    apiVersion: '2006-03-01',
+    apiVersion: '2012-10-17',
     params: {
       Bucket: 'dev-nextenzaik-config',
+      Region: 'eu-west-1',
     },
   });
   const data = await s3.getObject({ Bucket: 'dev-nextenzaik-config', Key: 'next-s3-config.json' }).promise();
