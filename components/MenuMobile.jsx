@@ -222,7 +222,7 @@ function MenuMobile() {
                 </div>
                 <input
                   id="search"
-                  className="md:form-input block w-full pl-9 sm:text-sm sm:leading-5"
+                  className="form-input block w-full pl-9 sm:text-sm sm:leading-5"
                   placeholder="Search"
                 ></input>
               </div>
@@ -375,7 +375,7 @@ function MenuMobile() {
                   </div>
                   <input
                     id="search_field"
-                    className="form-input block w-full h-full pl-8 pr-3 py-2 rounded-md text-gray-900 placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 sm:text-sm"
+                    className="block w-full h-full pl-8 pr-3 py-2 rounded-md text-gray-900 placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 sm:text-sm"
                     placeholder="Search"
                     type="search"
                   ></input>
