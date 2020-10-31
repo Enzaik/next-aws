@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import Transition from '../Transition';
+
 import Dropdown from './Dropdown';
 import Projects from './Projects';
 
@@ -20,9 +22,19 @@ function MenuMobile() {
             From: "opacity-100"
             To: "opacity-0"
         */}
-          <div className="fixed inset-0">
-            <div className="absolute inset-0 bg-gray-600 opacity-75"></div>
-          </div>
+          <Transition
+            show={isOpen}
+            enter="transition-opacity ease-linear duration-200"
+            enterFrom="opacity-0"
+            enterTo="opacity-100"
+            leave="transition-opacity ease-linear duration-200"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
+          >
+            <div className="fixed inset-0">
+              <div className="absolute inset-0 bg-gray-600 opacity-75"></div>
+            </div>
+          </Transition>
           {/*
           Off-canvas menu, show/hide based on off-canvas menu state.
   
@@ -33,131 +45,141 @@ function MenuMobile() {
             From: "translate-x-0"
             To: "-translate-x-full"
         */}
-          <div className="relative flex-1 flex flex-col max-w-xs w-full pt-5 pb-4 bg-white">
-            <div className="absolute top-0 right-0 -mr-14 p-1">
-              <button
-                //   closing button
-                className="flex items-center justify-center h-12 w-12 rounded-full focus:outline-none focus:bg-gray-600"
-                aria-label="Close sidebar"
-                onClick={() => setIsOpen(false)}
-              >
-                <svg className="h-6 w-6 text-white" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-            </div>
-            <div className="flex-shrink-0 flex items-center px-4">
-              <img
-                className="h-8 w-auto"
-                src="https://tailwindui.com/img/logos/workflow-logo-purple-on-white.svg"
-                alt="Workflow"
-              ></img>
-            </div>
-            <div className="mt-5 flex-1 h-0 overflow-y-auto">
-              <nav className="px-2">
-                <div className="space-y-1">
-                  <a
-                    href="#"
-                    className="group flex items-center px-2 py-2 text-base leading-5 font-medium rounded-md text-gray-900 bg-gray-100 hover:text-gray-900 hover:bg-gray-100 focus:bg-gray-200 focus:outline-none transition ease-in-out duration-150"
-                  >
-                    {/* Heroicon name: home */}
-                    <svg
-                      className="mr-3 h-6 w-6 text-gray-500 group-hover:text-gray-500 group-focus:text-gray-600 transition ease-in-out duration-150"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
-                      />
-                    </svg>
-                    Home
-                  </a>
-
-                  <a
-                    href="#"
-                    className="group flex items-center px-2 py-2 text-base leading-5 font-medium rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-50 focus:bg-gray-50 focus:outline-none transition ease-in-out duration-150"
-                  >
-                    {/* Heroicon name: view-list */}
-                    <svg
-                      className="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-600 transition ease-in-out duration-150"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M4 6h16M4 10h16M4 14h16M4 18h16"
-                      />
-                    </svg>
-                    My tasks
-                  </a>
-
-                  <a
-                    href="#"
-                    className="group flex items-center px-2 py-2 text-base leading-5 font-medium rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-50 focus:bg-gray-50 focus:outline-none transition ease-in-out duration-150"
-                  >
-                    {/* Heroicon name: clock */}
-                    <svg
-                      className="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-600 transition ease-in-out duration-150"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                    Recent
-                  </a>
-                </div>
-                <div className="mt-8">
-                  <h3
-                    className="px-3 text-xs leading-4 font-semibold text-gray-500 uppercase tracking-wider"
-                    id="teams-headline"
-                  >
-                    Teams
-                  </h3>
-                  <div className="mt-1 space-y-1" role="group" aria-labelledby="teams-headline">
+          <Transition
+            show={isOpen}
+            enter="transition ease-in-out duration-300 transform"
+            enterFrom="-translate-x-full"
+            enterTo="translate-x-0"
+            leave="transition ease-in-out duration-300 transform"
+            leaveFrom="translate-x-0"
+            leaveTo="-translate-x-full"
+          >
+            <div className="relative flex-1 flex flex-col max-w-xs w-full pt-5 pb-4 bg-white">
+              <div className="absolute top-0 right-0 -mr-14 p-1">
+                <button
+                  //   closing button
+                  className="flex items-center justify-center h-12 w-12 rounded-full focus:outline-none focus:bg-gray-600"
+                  aria-label="Close sidebar"
+                  onClick={() => setIsOpen(false)}
+                >
+                  <svg className="h-6 w-6 text-white" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+              <div className="flex-shrink-0 flex items-center px-4">
+                <img
+                  className="h-8 w-auto"
+                  src="https://tailwindui.com/img/logos/workflow-logo-purple-on-white.svg"
+                  alt="Workflow"
+                ></img>
+              </div>
+              <div className="mt-5 flex-1 h-0 overflow-y-auto">
+                <nav className="px-2">
+                  <div className="space-y-1">
                     <a
                       href="#"
-                      className="group flex items-center px-3 py-2 text-base leading-5 font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:bg-gray-50 transition ease-in-out duration-150"
+                      className="group flex items-center px-2 py-2 text-base leading-5 font-medium rounded-md text-gray-900 bg-gray-100 hover:text-gray-900 hover:bg-gray-100 focus:bg-gray-200 focus:outline-none transition ease-in-out duration-150"
                     >
-                      <span className="w-2.5 h-2.5 mr-4 bg-indigo-500 rounded-full"></span>
-                      <span className="truncate">Engineering</span>
+                      {/* Heroicon name: home */}
+                      <svg
+                        className="mr-3 h-6 w-6 text-gray-500 group-hover:text-gray-500 group-focus:text-gray-600 transition ease-in-out duration-150"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                        />
+                      </svg>
+                      Home
                     </a>
 
                     <a
                       href="#"
-                      className="group flex items-center px-3 py-2 text-base leading-5 font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:bg-gray-50 transition ease-in-out duration-150"
+                      className="group flex items-center px-2 py-2 text-base leading-5 font-medium rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-50 focus:bg-gray-50 focus:outline-none transition ease-in-out duration-150"
                     >
-                      <span className="w-2.5 h-2.5 mr-4 bg-teal-400 rounded-full"></span>
-                      <span className="truncate">Human Resources</span>
+                      {/* Heroicon name: view-list */}
+                      <svg
+                        className="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-600 transition ease-in-out duration-150"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M4 6h16M4 10h16M4 14h16M4 18h16"
+                        />
+                      </svg>
+                      My tasks
                     </a>
 
                     <a
                       href="#"
-                      className="group flex items-center px-3 py-2 text-base leading-5 font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:bg-gray-50 transition ease-in-out duration-150"
+                      className="group flex items-center px-2 py-2 text-base leading-5 font-medium rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-50 focus:bg-gray-50 focus:outline-none transition ease-in-out duration-150"
                     >
-                      <span className="w-2.5 h-2.5 mr-4 bg-orange-500 rounded-full"></span>
-                      <span className="truncate">Customer Success</span>
+                      {/* Heroicon name: clock */}
+                      <svg
+                        className="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-600 transition ease-in-out duration-150"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                        />
+                      </svg>
+                      Recent
                     </a>
                   </div>
-                </div>
-              </nav>
+                  <div className="mt-8">
+                    <h3
+                      className="px-3 text-xs leading-4 font-semibold text-gray-500 uppercase tracking-wider"
+                      id="teams-headline"
+                    >
+                      Teams
+                    </h3>
+                    <div className="mt-1 space-y-1" role="group" aria-labelledby="teams-headline">
+                      <a
+                        href="#"
+                        className="group flex items-center px-3 py-2 text-base leading-5 font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:bg-gray-50 transition ease-in-out duration-150"
+                      >
+                        <span className="w-2.5 h-2.5 mr-4 bg-indigo-500 rounded-full"></span>
+                        <span className="truncate">Engineering</span>
+                      </a>
+
+                      <a
+                        href="#"
+                        className="group flex items-center px-3 py-2 text-base leading-5 font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:bg-gray-50 transition ease-in-out duration-150"
+                      >
+                        <span className="w-2.5 h-2.5 mr-4 bg-teal-400 rounded-full"></span>
+                        <span className="truncate">Human Resources</span>
+                      </a>
+
+                      <a
+                        href="#"
+                        className="group flex items-center px-3 py-2 text-base leading-5 font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:bg-gray-50 transition ease-in-out duration-150"
+                      >
+                        <span className="w-2.5 h-2.5 mr-4 bg-orange-500 rounded-full"></span>
+                        <span className="truncate">Customer Success</span>
+                      </a>
+                    </div>
+                  </div>
+                </nav>
+              </div>
             </div>
-          </div>
+          </Transition>
           <div className="flex-shrink-0 w-14">{/* Dummy element to force sidebar to shrink to fit close icon */}</div>
         </div>
       </div>
@@ -174,18 +196,7 @@ function MenuMobile() {
           {/* Sidebar component, swap this element with another sidebar if you like */}
           <div className="h-0 flex-1 flex flex-col overflow-y-auto">
             {/* User account dropdown */}
-            <Dropdown
-              triggererType="selector"
-              items={[
-                //change
-                { text: 'View Profile', type: 'link' },
-                { text: 'Settings', type: 'link' },
-                { text: 'Notifications', type: 'link' },
-                { text: undefined, type: 'divider' },
-                { text: 'Get Desktop app', type: 'link' },
-                { text: 'Notifications', type: 'link' },
-              ]}
-            />
+            <Dropdown triggererType="selector" />
 
             {/* Sidebar Search */}
             <div className="px-3 mt-5">
@@ -371,92 +382,7 @@ function MenuMobile() {
               </form>
             </div>
             <div className="flex items-center">
-              {/* Profile dropdown */}
-              <div className="ml-3 relative">
-                <div>
-                  <button
-                    className="max-w-xs flex items-center text-sm rounded-full focus:outline-none focus:shadow-outline"
-                    id="user-menu"
-                    aria-label="User menu"
-                    aria-haspopup="true"
-                  >
-                    <img
-                      className="h-8 w-8 rounded-full"
-                      src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                      alt=""
-                    ></img>
-                  </button>
-                </div>
-                {/*
-                Profile dropdown panel, show/hide based on dropdown state.
-  
-                Entering: "transition ease-out duration-100"
-                  From: "transform opacity-0 scale-95"
-                  To: "transform opacity-100 scale-100"
-                Leaving: "transition ease-in duration-75"
-                  From: "transform opacity-100 scale-100"
-                  To: "transform opacity-0 scale-95"
-              */}
-                <div className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg">
-                  <div
-                    className="rounded-md bg-white shadow-xs"
-                    role="menu"
-                    aria-orientation="vertical"
-                    aria-labelledby="user-menu"
-                  >
-                    <div className="py-1">
-                      <a
-                        href="#"
-                        className="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900"
-                        role="menuitem"
-                      >
-                        View profile
-                      </a>
-                      <a
-                        href="#"
-                        className="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900"
-                        role="menuitem"
-                      >
-                        Settings
-                      </a>
-                      <a
-                        href="#"
-                        className="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900"
-                        role="menuitem"
-                      >
-                        Notifications
-                      </a>
-                    </div>
-                    <div className="border-t border-gray-100"></div>
-                    <div className="py-1">
-                      <a
-                        href="#"
-                        className="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900"
-                        role="menuitem"
-                      >
-                        Get desktop app
-                      </a>
-                      <a
-                        href="#"
-                        className="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900"
-                        role="menuitem"
-                      >
-                        Support
-                      </a>
-                    </div>
-                    <div className="border-t border-gray-100"></div>
-                    <div className="py-1">
-                      <a
-                        href="#"
-                        className="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900"
-                        role="menuitem"
-                      >
-                        Logout
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <Dropdown triggererType="profile" />
             </div>
           </div>
         </div>

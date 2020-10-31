@@ -1,0 +1,57 @@
+{
+  "menurow": [
+    { "text": "View Menu", "type": "link" },
+    { "text": "Settings", "type": "link" },
+    { "text": "Notifications", "type": "link" },
+    { "type": "divider" },
+    { "text": "Get Desktop app", "type": "link" },
+    { "text": "Notifications", "type": "link" }
+  ],
+  "selector": [
+    { "text": "View Selector", "type": "link" },
+    { "text": "Settings", "type": "link" },
+    { "text": "Notifications", "type": "link" },
+    { "type": "divider" },
+    { "text": "Get Desktop app", "type": "link" },
+    { "text": "Notifications", "type": "link" }
+  ],
+  "profile": [
+    { "text": "View Selector", "type": "link" },
+    { "text": "Settings", "type": "link" },
+    { "text": "Notifications", "type": "link" },
+    { "type": "divider" },
+    { "text": "Get Desktop app", "type": "link" },
+    { "text": "Notifications", "type": "link" }
+  ],
+  "item": [
+    { "text": "View Item", "type": "link" },
+    { "text": "Settings", "type": "link" },
+    { "text": "Notifications", "type": "link" },
+    { "type": "divider" },
+    { "text": "Get Desktop app", "type": "link" },
+    { "text": "Notifications", "type": "link" }
+  ],
+  "projects": [
+    {
+      "id": "graphql",
+      "text": "GraphQL API",
+      "helpText": "in Engineering",
+      "date": "March 17, 2020",
+      "color": "bg-pink-600"
+    },
+    {
+      "id": "ios",
+      "text": "iOS Apps",
+      "helpText": "in Development",
+      "date": "March 20, 2020",
+      "color": "bg-purple-600"
+    },
+    {
+      "id": "marketing",
+      "text": "Marketing",
+      "helpText": "in Marketing",
+      "date": "February 20, 2020",
+      "color": "bg-green-400"
+    }
+  ]
+}

@@ -98,6 +98,31 @@ function Dropdown({ type = 'iconless', triggererType }) {
     </>
   );
 
+  if (triggererType === 'profile') {
+    return (
+      <div ref={ref} className="flex items-center">
+        <div className="ml-3 relative">
+          <div>
+            <button
+              className="max-w-xs flex items-center text-sm rounded-full focus:outline-none focus:shadow-outline"
+              id="user-menu"
+              aria-label="User menu"
+              aria-haspopup="true"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              <img
+                className="h-8 w-8 rounded-full"
+                src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                alt=""
+              ></img>
+            </button>
+          </div>
+          {dropdown}
+        </div>
+      </div>
+    );
+  }
+
   if (triggererType === 'selector') {
     return (
       <div ref={ref} className="px-3 mt-6 relative inline-block text-left">
