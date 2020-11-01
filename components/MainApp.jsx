@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import MobileMenu from './MobileMenu';
 
 import MainColumn from './MainColumn';
-import Sidebar from './Sidebar';
+import StaticSidebar from './StaticSidebar';
 
 function MainApp() {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,7 +11,7 @@ function MainApp() {
       {/* Off-canvas menu for mobile, show/hide based on off-canvas menu state. */}
       <MobileMenu isOpen={isOpen} setIsOpen={setIsOpen} />
       {/* Static sidebar for desktop */}
-      <Sidebar />
+      <StaticSidebar />
       {/* Main column */}
       <MainColumn setIsOpen={setIsOpen} />
     </div>
