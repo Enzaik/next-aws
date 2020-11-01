@@ -2,7 +2,14 @@ import React from 'react';
 import InputMobile from './Input/InputMobile';
 import Dropdown from './Dropdown';
 import Projects from './Projects';
+import ProjectsMobile from './Projects/ProjectsMobile';
 import PinnedProjects from './Projects/PinnedProjects/PinnedProjectsContainer';
+
+import {
+  // Configure, Highlight,
+  connectHits,
+  // connectHitInsights
+} from 'react-instantsearch-dom';
 
 function MainColumn({ setIsOpen }) {
   return (
@@ -85,33 +92,7 @@ function MainColumn({ setIsOpen }) {
           <div className="px-4 sm:px-6">
             <h2 className="text-gray-500 text-xs font-medium uppercase tracking-wide">Projects</h2>
           </div>
-          <ul className="mt-3 border-t border-gray-200 divide-y divide-gray-100">
-            <li>
-              <a href="#" className="flex items-center justify-between px-4 py-4 hover:bg-gray-50 sm:px-6">
-                <div className="flex items-center truncate space-x-3">
-                  <div className="w-2.5 h-2.5 flex-shrink-0 rounded-full bg-pink-600"></div>
-                  <p className="font-medium truncate text-sm leading-6">
-                    GraphQL API <span className="truncate font-normal text-gray-500">in Engineering</span>
-                  </p>
-                </div>
-                {/* Heroicon name: chevron-right */}
-                <svg
-                  className="ml-4 h-5 w-5 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-600 transition ease-in-out duration-150"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </a>
-            </li>
-
-            {/* More project rows... */}
-          </ul>
+          <ProjectsMobile />
         </div>
         {/* Projects table (small breakpoint and up) */}
         <div className="hidden mt-8 sm:block">
@@ -140,4 +121,4 @@ function MainColumn({ setIsOpen }) {
   );
 }
 
-export default MainColumn;
+export default connectHits(MainColumn);
