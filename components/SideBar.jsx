@@ -13,7 +13,7 @@ function SideBar() {
             alt="Workflow"
           ></img>
         </div>
-        {/* Sidebar component, swap this element with another sidebar if you like */}
+        {/* Sidebar component, swap this element with another sidebar */}
         <div className="h-0 flex-1 flex flex-col overflow-y-auto">
           {/* User account dropdown */}
           <Dropdown triggererType="selector" />
