@@ -6,6 +6,7 @@ module.exports = {
   purge: {
     mode: 'all',
     content: ['./components/**/*.{js,jsx}', './pages/**/*.{js,jsx}'],
+    whitelistPatterns: [/^bg-/, /^text-/],
   },
   theme: {
     extend: {

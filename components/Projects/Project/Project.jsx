@@ -3,23 +3,29 @@
 import React from 'react';
 import Dropdown from '../../Dropdown';
 
-export default function Project({ id, text, helpText, date, color }) {
-  const getClass = (id) => {
-    switch (id) {
-      case 'graphql':
-        return `flex-shrink-0 w-2.5 h-2.5 rounded-full bg-pink-600`;
-      case 'ios':
-        return `flex-shrink-0 w-2.5 h-2.5 rounded-full bg-purple-600`;
-      case 'marketing':
-        return `flex-shrink-0 w-2.5 h-2.5 rounded-full bg-green-600`;
-    }
-  };
+export default function Project({
+  // id,
+  text,
+  helpText,
+  date,
+  color,
+}) {
+  // const getClass = (id) => {
+  //   switch (id) {
+  //     case 'graphql':
+  //       return `flex-shrink-0 w-2.5 h-2.5 rounded-full bg-pink-600`;
+  //     case 'ios':
+  //       return `flex-shrink-0 w-2.5 h-2.5 rounded-full bg-purple-600`;
+  //     case 'marketing':
+  //       return `flex-shrink-0 w-2.5 h-2.5 rounded-full bg-green-600`;
+  //   }
+  // };
 
   return (
     <tr>
       <td className="px-6 py-3 max-w-0 w-full whitespace-no-wrap text-sm leading-5 font-medium text-gray-900">
         <div className="flex items-center space-x-3 lg:pl-2">
-          <div className={getClass(id)}></div>
+          <div className={`flex-shrink-0 w-2.5 h-2.5 rounded-full ${color}`}></div>
           <a href="#" className="truncate hover:text-gray-600">
             <span>
               {text} <span className="text-gray-500 font-normal">{helpText}</span>{' '}
