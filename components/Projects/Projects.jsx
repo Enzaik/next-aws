@@ -17,8 +17,8 @@ export default function Projects() {
   return (
     <tbody className="bg-white divide-y divide-gray-100">
       {projects &&
-        projects.map(({ id, text, helpText, date, color }) => {
-          return <Project id={id} text={text} helpText={helpText} date={date} color={color} />;
+        projects.map(({ text, helpText, date, color }) => {
+          return <Project text={text} helpText={helpText} date={date} color={color} />;
         })}
     </tbody>
   );
