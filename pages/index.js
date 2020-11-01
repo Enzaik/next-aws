@@ -12,10 +12,6 @@ export default function IndexPage() {
   // const housesIndex = searchClient.initIndex('projects');
   return (
     <div>
-      {/*
-    Tailwind UI components require Tailwind CSS v1.8 and the @tailwindcss/ui plugin.
-    Read the documentation to get started: https://tailwindui.com/documentation
-  */}{' '}
       <InstantSearch indexName="projects" searchClient={searchClient}>
         <MainApp />
       </InstantSearch>
