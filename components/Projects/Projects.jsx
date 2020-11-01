@@ -1,5 +1,9 @@
 import { useEffect, useState } from 'react';
-import { Configure, Highlight, connectHits, connectHitInsights } from 'react-instantsearch-dom';
+import {
+  // Configure, Highlight,
+  connectHits,
+  // connectHitInsights
+} from 'react-instantsearch-dom';
 
 import Project from './Project/Project';
 import { getS3Data } from '../../utils/getS3Data';
