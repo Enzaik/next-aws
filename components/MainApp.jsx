@@ -5,7 +5,7 @@ import Transition from '../Transition';
 import Dropdown from './Dropdown';
 import Projects from './Projects';
 
-function MenuMobile() {
+function MainApp() {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="h-screen flex overflow-hidden bg-white">
@@ -510,4 +510,4 @@ function MenuMobile() {
   );
 }
 
-export default MenuMobile;
+export default MainApp;

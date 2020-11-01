@@ -1,25 +1,27 @@
 import { useEffect, useState } from 'react';
+import { Configure, Highlight, connectHits, connectHitInsights } from 'react-instantsearch-dom';
 
 import Project from './Project/Project';
 import { getS3Data } from '../../utils/getS3Data';
-export default function Projects() {
+
+const Projects = ({ hits }) => {
   const [projects, setProjects] = useState([]);
   useEffect(() => {
     async function getData() {
       const projectsData = await getS3Data('projects');
-
       setProjects(projectsData);
     }
     getData();
-    // console.log(projects);
   }, []);
 
   return (
     <tbody className="bg-white divide-y divide-gray-100">
-      {projects &&
-        projects.map(({ text, helpText, date, color }) => {
+      {hits &&
+        hits.map(({ text, helpText, date, color }) => {
           return <Project text={text} helpText={helpText} date={date} color={color} />;
         })}
     </tbody>
   );
-}
+};
+
+export default connectHits(Projects);
