@@ -64,7 +64,7 @@ export default function MobileMenu({ isOpen, setIsOpen }) {
             <div className="flex-shrink-0 flex items-center px-4">
               <img
                 className="h-8 w-auto"
-                src="https://tailwindui.com/img/logos/workflow-logo-purple-on-white.svg"
+                src="https://tailwindui.com/img/logos/v1/workflow-mark-indigo-300.svg"
                 alt="Workflow"
               ></img>
             </div>

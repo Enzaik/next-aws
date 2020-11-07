@@ -9,7 +9,7 @@ function SideBar() {
         <div className="flex items-center flex-shrink-0 px-6">
           <img
             className="h-8 w-auto"
-            src="https://tailwindui.com/img/logos/workflow-logo-purple-on-white.svg"
+            src="https://tailwindui.com/img/logos/v1/workflow-mark-indigo-300.svg"
             alt="Workflow"
           ></img>
         </div>
