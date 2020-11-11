@@ -13,7 +13,7 @@ import {
 
 function MainColumn({ setIsOpen }) {
   return (
-    <div className="flex flex-col w-0 flex-1 overflow-hidden">
+    <div className="font-inter flex flex-col w-0 flex-1 overflow-hidden">
       {/* Search header */}
       <div className="relative z-10 flex-shrink-0 flex h-16 bg-white border-b border-gray-200 lg:hidden">
         {/* Sidebar toggle, controls the 'sidebarOpen' sidebar state. */}
@@ -62,9 +62,9 @@ function MainColumn({ setIsOpen }) {
       </div>
       <main className="flex-1 relative z-0 overflow-y-auto focus:outline-none">
         {/* Page title & actions */}
-        <div className="border-b border-gray-200 px-4 py-4 sm:flex sm:items-center sm:justify-between sm:px-6 lg:px-8">
+        <div className="border-b sm:justify-between sm:items-center px-4 sm:px-6 lg:px-8 py-4 border-gray-200 flex">
           <div className="flex-1 min-w-0">
-            <h1 className="text-lg font-medium leading-6 text-gray-900 sm:truncate">Home</h1>
+            <h1 className="sm:truncate text-gray-900 font-medium text-lg leading-6 flex">Home</h1>
           </div>
           <div className="mt-4 flex sm:mt-0 sm:ml-4">
             <span className="order-1 ml-3 shadow-sm rounded-md sm:order-0 sm:ml-0">
