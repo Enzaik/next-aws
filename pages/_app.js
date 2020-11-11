@@ -1,7 +1,7 @@
 /* eslint react/prop-types: 0, react/react-in-jsx-scope: 0 */
 import '../styles/index.css';
 import Head from 'next/head';
-import { Devtools } from '@ui-devtools/tailwind';
+// import { Devtools } from '@ui-devtools/tailwind';
 import algoliasearch from 'algoliasearch';
 import {
   InstantSearch,
@@ -18,11 +18,14 @@ function MyApp({ Component, pageProps }) {
         <Component {...pageProps} />
       </InstantSearch>
     ) : (
-      <Devtools>
-        <InstantSearch indexName="projects" searchClient={searchClient}>
-          <Component {...pageProps} />
-        </InstantSearch>
-      </Devtools>
+      // <Devtools>
+      //   <InstantSearch indexName="projects" searchClient={searchClient}>
+      //     <Component {...pageProps} />
+      //   </InstantSearch>
+      // </Devtools>
+      <InstantSearch indexName="projects" searchClient={searchClient}>
+        <Component {...pageProps} />
+      </InstantSearch>
     );
 
   return (
