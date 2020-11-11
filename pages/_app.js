@@ -11,6 +11,20 @@ import {
 function MyApp({ Component, pageProps }) {
   const searchClient = algoliasearch(`${process.env.ALGOLIA_ID}`, `${process.env.ALGOLIA_SECRET}`);
   // const housesIndex = searchClient.initIndex('projects');
+
+  const component =
+    process.env.NODE_ENV === 'production' ? (
+      <InstantSearch indexName="projects" searchClient={searchClient}>
+        <Component {...pageProps} />
+      </InstantSearch>
+    ) : (
+      <Devtools>
+        <InstantSearch indexName="projects" searchClient={searchClient}>
+          <Component {...pageProps} />
+        </InstantSearch>
+      </Devtools>
+    );
+
   return (
     <>
       <Head>
@@ -28,12 +42,7 @@ function MyApp({ Component, pageProps }) {
           onLoad="this.onload=null;this.rel='stylesheet'"
         />
       </Head>
-      <Devtools>
-        <InstantSearch indexName="projects" searchClient={searchClient}>
-          <Component {...pageProps} />
-          );
-        </InstantSearch>
-      </Devtools>
+      {component}
     </>
   );
 }
