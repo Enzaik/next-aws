@@ -15,7 +15,6 @@ function Header({ id, getHocS3Data }) {
   useEffect(() => {
     async function getData() {
       const { headerItems } = await getHocS3Data();
-      console.log(headerItems);
       setS3Data(headerItems);
     }
     getData();
@@ -41,7 +40,6 @@ function Header({ id, getHocS3Data }) {
               <div className="ml-10 flex items-baseline space-x-4">
                 {s3Data &&
                   s3Data.map(({ href, as, headerId, text }) => {
-                    console.log(id, headerId);
                     return (
                       <Link href={href} as={as}>
                         <a
