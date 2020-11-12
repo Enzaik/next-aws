@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 import Content from './Content';
 
-export default function Container() {
+export default function Container({ id, content }) {
   return (
     <div>
       <nav className="bg-indigo-700">
@@ -18,28 +18,40 @@ export default function Container() {
               </div>
               <div className="hidden md:block">
                 <div className="ml-10 flex items-baseline space-x-4">
-                  <Link
-                    href="/posts/dashboard"
-                    as="/posts/dashboard"
-                    className="px-3 py-2 rounded-md text-sm font-medium text-white bg-indigo-800 focus:outline-none focus:text-white focus:bg-indigo-600"
-                  >
-                    <a>Dashboard</a>
+                  <Link href="/posts/dashboard" as="/posts/dashboard">
+                    <a
+                      className={`px-3 py-2 rounded-md text-sm font-medium ${
+                        id === 'dashboard'
+                          ? 'text-white bg-indigo-800 focus:outline-none focus:text-white focus:bg-indigo-600'
+                          : 'text-indigo-200 hover:text-white hover:bg-indigo-600 focus:outline-none'
+                      }`}
+                    >
+                      Dashboard
+                    </a>
                   </Link>
 
-                  <Link
-                    href="/posts/team"
-                    as="/posts/team"
-                    className="px-3 py-2 rounded-md text-sm font-medium text-indigo-200 hover:text-white hover:bg-indigo-600 focus:outline-none focus:text-white focus:bg-indigo-600"
-                  >
-                    <a>Team</a>
+                  <Link href="/posts/team" as="/posts/team">
+                    <a
+                      className={`px-3 py-2 rounded-md text-sm font-medium  ${
+                        id === 'team'
+                          ? 'text-white bg-indigo-800 focus:outline-none focus:text-white focus:bg-indigo-600'
+                          : 'text-indigo-200 hover:text-white hover:bg-indigo-600 focus:outline-none'
+                      }`}
+                    >
+                      Team
+                    </a>
                   </Link>
 
-                  <Link
-                    href="/posts/projects"
-                    as="/posts/projects"
-                    className="px-3 py-2 rounded-md text-sm font-medium text-indigo-200 hover:text-white hover:bg-indigo-600 focus:outline-none focus:text-white focus:bg-indigo-600"
-                  >
-                    <a>Projects</a>
+                  <Link href="/posts/projects" as="/posts/projects">
+                    <a
+                      className={`px-3 py-2 rounded-md text-sm font-medium ${
+                        id === 'projects'
+                          ? 'text-white bg-indigo-800 focus:outline-none focus:text-white focus:bg-indigo-600'
+                          : 'text-indigo-200 hover:text-white hover:bg-indigo-600 focus:outline-none'
+                      }`}
+                    >
+                      Projects
+                    </a>
                   </Link>
                 </div>
               </div>
@@ -77,15 +89,15 @@ export default function Container() {
                     </button>
                   </div>
                   {/* <!--
-                      Profile dropdown panel, show/hide based on dropdown state.
+                    Profile dropdown panel, show/hide based on dropdown state.
 
-                      Entering: "transition ease-out duration-100"
-                        From: "transform opacity-0 scale-95"
-                        To: "transform opacity-100 scale-100"
-                      Leaving: "transition ease-in duration-75"
-                        From: "transform opacity-100 scale-100"
-                        To: "transform opacity-0 scale-95"
-                    --> */}
+                    Entering: "transition ease-out duration-100"
+                      From: "transform opacity-0 scale-95"
+                      To: "transform opacity-100 scale-100"
+                    Leaving: "transition ease-in duration-75"
+                      From: "transform opacity-100 scale-100"
+                      To: "transform opacity-0 scale-95"
+                  --> */}
                   <div className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg">
                     <div className="py-1 rounded-md bg-white shadow-xs">
                       <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
@@ -120,38 +132,46 @@ export default function Container() {
           </div>
         </div>
         {/* <!--
-            Mobile menu, toggle classes based on menu state.
+          Mobile menu, toggle classes based on menu state.
 
-            Open: "block", closed: "hidden"
-        -->*/}
+          Open: "block", closed: "hidden"
+      -->*/}
         <div className="hidden md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <Link
-              href="/posts/dashboard"
-              as="/posts/dashboard"
-              className="block px-3 py-2 rounded-md text-base font-medium text-white bg-indigo-800
-               focus:outline-none focus:text-white focus:bg-gray-700"
+            <a
+              href="#"
+              className="block px-3 py-2 rounded-md text-base font-medium text-white bg-indigo-800 focus:outline-none focus:text-white focus:bg-gray-700"
             >
-              <a>Dashboard</a>{' '}
-            </Link>
+              Dashboard
+            </a>
 
-            <Link
-              href="/posts/team"
-              as="/posts/team"
-              className="block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-white
-               hover:bg-indigo-600 focus:outline-none focus:text-white focus:bg-indigo-600"
+            <a
+              href="#"
+              className="block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-white hover:bg-indigo-600 focus:outline-none focus:text-white focus:bg-indigo-600"
             >
-              <a>Team</a>{' '}
-            </Link>
+              Team
+            </a>
 
-            <Link
-              href="/posts/project"
-              as="/posts/project"
-              className="block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-white
-               hover:bg-indigo-600 focus:outline-none focus:text-white focus:bg-indigo-600"
+            <a
+              href="#"
+              className="block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-white hover:bg-indigo-600 focus:outline-none focus:text-white focus:bg-indigo-600"
             >
-              <a>Projects</a>{' '}
-            </Link>
+              Projects
+            </a>
+
+            <a
+              href="#"
+              className="block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-white hover:bg-indigo-600 focus:outline-none focus:text-white focus:bg-indigo-600"
+            >
+              Calendar
+            </a>
+
+            <a
+              href="#"
+              className="block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-white hover:bg-indigo-600 focus:outline-none focus:text-white focus:bg-indigo-600"
+            >
+              Reports
+            </a>
           </div>
           <div className="pt-4 pb-3 border-t border-gray-700">
             <div className="flex items-center px-5 space-x-3">
@@ -198,7 +218,7 @@ export default function Container() {
 
       <header className="bg-white shadow">
         <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-          <h1 className="text-3xl font-bold leading-tight text-gray-900">Dashboard</h1>
+          <h1 className="text-3xl font-bold leading-tight text-gray-900">{content}</h1>
         </div>
       </header>
       <main>
@@ -213,9 +233,14 @@ export default function Container() {
 }
 
 export async function getStaticProps({ params }) {
+  const translate = (id) => {
+    const translations = { dashboard: 'Dashboard', team: 'Team', projects: 'Projects' };
+    return translations[id];
+  };
   return {
     props: {
-      id: 'lol',
+      id: 'Base',
+      content: translate(params.id),
     },
   };
 }
