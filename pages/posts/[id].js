@@ -1,4 +1,4 @@
-import Content from '../../components/Table/Table';
+import Content from '../../components/Content/Content';
 import NavBar from '../../components/NavBar/NavBar';
 import Header from '../../components/Header/Header';
 

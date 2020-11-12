@@ -1,4 +1,3 @@
-import Table from '../Table/Table';
 import NavBar from '../NavBar/NavBar';
 import Header from '../Header/Header';
 import Content from '../Content/Content';
