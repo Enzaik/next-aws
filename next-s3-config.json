@@ -16,12 +16,9 @@
     { "text": "Notifications", "type": "link" }
   ],
   "profile": [
-    { "text": "View Selector", "type": "link" },
+    { "text": "Your Profile", "type": "link" },
     { "text": "Settings", "type": "link" },
-    { "text": "Notifications", "type": "link" },
-    { "type": "divider" },
-    { "text": "Get Desktop app", "type": "link" },
-    { "text": "Notifications", "type": "link" }
+    { "text": "Sign out", "type": "link" }
   ],
   "item": [
     { "text": "View Item", "type": "link" },

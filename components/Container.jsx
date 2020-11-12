@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 import Content from './Content';
+import Dropdown from './Dropdown';
 
 export default function Container({ id, content }) {
   return (
@@ -73,7 +74,7 @@ export default function Container({ id, content }) {
                 </button>
 
                 {/* <!-- Profile dropdown --> */}
-                <div className="ml-3 relative">
+                {/* <div className="ml-3 relative">
                   <div>
                     <button
                       className="max-w-xs flex items-center text-sm rounded-full text-white focus:outline-none focus:shadow-solid"
@@ -88,16 +89,7 @@ export default function Container({ id, content }) {
                       />
                     </button>
                   </div>
-                  {/* <!--
-                    Profile dropdown panel, show/hide based on dropdown state.
 
-                    Entering: "transition ease-out duration-100"
-                      From: "transform opacity-0 scale-95"
-                      To: "transform opacity-100 scale-100"
-                    Leaving: "transition ease-in duration-75"
-                      From: "transform opacity-100 scale-100"
-                      To: "transform opacity-0 scale-95"
-                  --> */}
                   <div className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg">
                     <div className="py-1 rounded-md bg-white shadow-xs">
                       <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
@@ -113,7 +105,8 @@ export default function Container({ id, content }) {
                       </a>
                     </div>
                   </div>
-                </div>
+                </div> */}
+                <Dropdown triggererType="profile" />
               </div>
             </div>
             <div className="-mr-2 flex md:hidden">
