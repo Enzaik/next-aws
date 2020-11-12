@@ -57,7 +57,7 @@ function Header({ currentPageId, getHocS3Data }) {
               </div>
             </div>
           </div>
-          <div className="flex flex-1 justify-end">
+          <div className="flex flex-1 justify-center md:justify-end">
             <div class="max-w-lg w-full lg:max-w-xs">
               <label for="search" class="sr-only">
                 Search
@@ -74,9 +74,10 @@ function Header({ currentPageId, getHocS3Data }) {
                 </div>
                 <input
                   id="search"
-                  class="block w-full pl-10 pr-3 py-2 border border-transparent rounded-md leading-5 bg-indigo-800 text-gray-300 placeholder-gray-400 focus:outline-none focus:bg-indigo-600 focus:text-gray-900 sm:text-sm transition duration-150 ease-in-out"
+                  class="block w-full pl-10 pr-3 py-2 border border-transparent rounded-md leading-5 bg-indigo-800 text-gray-300 placeholder-gray-400 focus:outline-none focus:bg-indigo-600 focus:text-white sm:text-sm transition duration-150 ease-in-out"
                   placeholder="Search"
                   type="search"
+                  autoComplete="off"
                 />
               </div>
             </div>
