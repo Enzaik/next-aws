@@ -4,7 +4,7 @@ import Content from './Content';
 import Header from './Header';
 function Container({ id, content }) {
   return (
-    <div>
+    <div className="font-inter">
       <Header id={id} />
       <header className="bg-white shadow pt-15">
         <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
