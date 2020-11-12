@@ -201,7 +201,6 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  console.log(params);
   const translate = (id) => {
     const translations = { dashboard: 'Dashboard', team: 'Team', projects: 'Projects' };
     return translations[id];

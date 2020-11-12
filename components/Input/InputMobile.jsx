@@ -7,7 +7,6 @@ import {
 function InputMobile({ hits, currentRefinement, refine }) {
   const [value, setValue] = useState('');
   const inputHandle = (e, hits) => {
-    console.log(hits, e.target.value.length);
     // setAreSearchResults(hits.length, e.target.value.length);
     setValue(e.target.value);
     refine(e.currentTarget.value);

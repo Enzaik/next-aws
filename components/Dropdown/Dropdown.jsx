@@ -1,18 +1,16 @@
 import React, { useState, useRef, useEffect } from 'react';
 
+import withS3Data from '../../hoc/withS3Data';
 import DropdownItems from './DropdownItems';
 
-// import { LazyLoadImage } from 'react-lazy-load-image-component';
-import { getS3Data } from '../../utils/getS3Data';
-
-function Dropdown({ type = 'iconless', triggererType }) {
+function Dropdown({ type = 'iconless', triggererType, getHocS3Data }) {
   const [isOpen, setIsOpen] = useState(false);
-  const [s3Data, setS3Data] = useState([]);
+  const [s3Data, setS3Data] = useState(['']);
   const ref = useRef();
   useEffect(() => {
     async function getData() {
-      const config = await getS3Data(triggererType);
-      setS3Data(config);
+      const { profile } = await getHocS3Data();
+      setS3Data(profile);
     }
     getData();
   }, []);
@@ -50,7 +48,7 @@ function Dropdown({ type = 'iconless', triggererType }) {
               ></img>
             </button>
           </div>
-          <DropdownItems isOpen={isOpen} s3Data={s3Data} type={type} />
+          <DropdownItems config={s3Data} isOpen={isOpen} s3Data={s3Data} type={type} />
         </div>
       </div>
     );
@@ -96,7 +94,7 @@ function Dropdown({ type = 'iconless', triggererType }) {
             </div>
           </button>
         </div>
-        <DropdownItems isOpen={isOpen} s3Data={s3Data} type={type} />
+        <DropdownItems config={s3Data} isOpen={isOpen} s3Data={s3Data} type={type} />
       </div>
     );
   }
@@ -114,7 +112,7 @@ function Dropdown({ type = 'iconless', triggererType }) {
             <path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z" />
           </svg>
         </button>
-        <DropdownItems isOpen={isOpen} s3Data={s3Data} type={type} />
+        <DropdownItems config={s3Data} isOpen={isOpen} s3Data={s3Data} type={type} />
       </div>
     );
   }
@@ -133,10 +131,10 @@ function Dropdown({ type = 'iconless', triggererType }) {
             <path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z" />
           </svg>
         </button>
-        <DropdownItems isOpen={isOpen} s3Data={s3Data} type={type} />
+        <DropdownItems config={s3Data} isOpen={isOpen} s3Data={s3Data} type={type} />
       </div>
     );
   }
 }
 
-export default Dropdown;
+export default withS3Data(Dropdown);

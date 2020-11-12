@@ -16,6 +16,6 @@ export const getS3Data = async (configParam) => {
   });
   const data = await s3.getObject({ Bucket: 'dev-nextenhanced-config', Key: 'next-s3-config.json' }).promise();
 
-  return JSON.parse(data.Body.toString('utf8'))[configParam];
+  return configParam ? JSON.parse(data.Body.toString('utf8'))[configParam] : JSON.parse(data.Body.toString('utf8'));
   // return dataJson[configParam];
 };
