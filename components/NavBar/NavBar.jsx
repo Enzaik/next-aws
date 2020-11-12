@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 
-import withS3Data from '../hoc/withS3Data';
+import withS3Data from '../../hoc/withS3Data';
 
 import Link from 'next/link';
-import Dropdown from './Dropdown/Dropdown';
+import Dropdown from '../Dropdown/Dropdown';
 
-function Header({ id, getHocS3Data }) {
+function Header({ currentPageId, getHocS3Data }) {
   const [s3Data, setS3Data] = useState([
     { headerId: 'Dashboard', href: '/posts/dashboard', as: '/posts/dashboard' },
     { headerId: 'Team', href: '/posts/team', as: '/posts/team' },
@@ -44,7 +44,7 @@ function Header({ id, getHocS3Data }) {
                       <Link href={href} as={as}>
                         <a
                           className={`px-3 py-2 rounded-md text-sm font-medium ${
-                            id === headerId
+                            currentPageId === headerId
                               ? 'text-white bg-indigo-800 focus:outline-none focus:text-white focus:bg-indigo-600'
                               : 'text-indigo-200 hover:text-white hover:bg-indigo-600 focus:outline-none'
                           }`}
@@ -116,7 +116,7 @@ function Header({ id, getHocS3Data }) {
               <Link href={href} as={as}>
                 <a
                   className={` block px-3 py-2 rounded-md text-base font-medium text-white focus:outline-none focus:text-white focus:bg-gray-700 ${
-                    id === headerId ? 'bg-indigo-800' : ''
+                    currentPageId === headerId ? 'bg-indigo-800' : ''
                   }`}
                 >
                   {text}

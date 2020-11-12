@@ -1,6 +1,6 @@
 import React from 'react';
 import Dropdown from './Dropdown';
-import InputDesktop from './Input/InputDesktop';
+import InputDesktop from '../Input/InputDesktop';
 
 function SideBar() {
   return (

@@ -1,25 +1,13 @@
-import Link from 'next/link';
-import Content from '../../components/Content';
-import Header from '../../components/Header';
+import Content from '../../components/Table/Table';
+import NavBar from '../../components/NavBar/NavBar';
+import Header from '../../components/Header/Header';
 
-export default function MainContent({ id, content }) {
+export default function Page({ id, content }) {
   return (
-    <div className="">
-      <Header id={id} />
-      <header className="bg-white shadow pt-15">
-        <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-          <h1 className="text-3xl font-bold leading-tight text-gray-900">{content}</h1>
-        </div>
-      </header>
-      <main className="h-screen bg-gray-100">
-        <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-          {/* <!-- Replace with your content --> */}
-          <div className="px-0 overflow-hidden md:rounded-lg shadow">
-            <Content />
-          </div>
-          {/* <!-- /End replace --> */}
-        </div>
-      </main>
+    <div>
+      <NavBar currentPageId={id} />
+      <Header content={content} />
+      <Content />
     </div>
   );
 }

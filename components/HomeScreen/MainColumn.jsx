@@ -1,9 +1,9 @@
 import React from 'react';
-import InputMobile from './Input/InputMobile';
+import InputMobile from '../Input/InputMobile';
 import Dropdown from './Dropdown';
-import Projects from './Projects';
-import ProjectsMobile from './Projects/ProjectsMobile';
-import PinnedProjects from './Projects/PinnedProjects/PinnedProjectsContainer';
+import Projects from '../Projects';
+import ProjectsMobile from '../Projects/ProjectsMobile';
+import PinnedProjects from '../Projects/PinnedProjects/PinnedProjectsContainer';
 
 import {
   // Configure, Highlight,

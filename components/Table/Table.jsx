@@ -1,7 +1,7 @@
 import React from 'react';
-import Projects from './Projects/Projects';
+import Projects from '../Projects/Projects';
 
-function Content() {
+function Table() {
   return (
     <table className="min-w-full">
       <thead>
@@ -23,4 +23,4 @@ function Content() {
   );
 }
 
-export default Content;
+export default Table;

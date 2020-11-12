@@ -1,5 +1,5 @@
 import React from 'react';
-import Transition from '../Transition';
+import Transition from '../../Transition';
 
 export default function MobileMenu({ isOpen, setIsOpen }) {
   return (
