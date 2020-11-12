@@ -51,7 +51,7 @@ export default function Project({ text, helpText, date, color }) {
         {date}
       </td>
       <td className="pr-6">
-        <Dropdown triggererType="menurow" />
+        {/* <Dropdown triggererType="menurow" />  */}
       </td>
     </tr>
   );
