@@ -4,7 +4,7 @@ import Header from '../../components/Header';
 
 export default function MainContent({ id, content }) {
   return (
-    <div className="font-inter">
+    <div className="">
       <Header id={id} />
       <header className="bg-white shadow pt-15">
         <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
