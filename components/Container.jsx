@@ -14,7 +14,9 @@ function Container({ id, content }) {
       <main>
         <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
           {/* <!-- Replace with your content --> */}
-          <Content />
+          <div className="px-0 overflow-hidden md:rounded-lg h-96 shadow">
+            <Content />
+          </div>
           {/* <!-- /End replace --> */}
         </div>
       </main>
