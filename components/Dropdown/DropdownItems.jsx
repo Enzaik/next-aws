@@ -1,7 +1,15 @@
 import React from 'react';
 import Transition from '../../Transition';
 
-function DropdownItems({ isOpen, s3Data, type }) {
+function DropdownItems({ isOpen, s3Data, type, triggererType }) {
+  const triggererTypeClasses = () => {
+    switch (triggererType) {
+      case 'profile':
+        return 'absolute right-0 mt-1';
+      default:
+        return 'absolute right-7 top-0 mt-1';
+    }
+  };
   return (
     <Transition
       show={isOpen}
@@ -13,10 +21,8 @@ function DropdownItems({ isOpen, s3Data, type }) {
       leaveTo="opacity-0 scale-95"
     >
       <div
-        className={`${
-          type === 'icon'
-            ? 'z-10 mx-3 origin-top absolute right-0 left-0 mt-1 rounded-md shadow-lg'
-            : 'z-10 mx-3 origin-top-right absolute right-7 top-0 w-48 mt-1 rounded-md shadow-lg'
+        className={`w-48 ${triggererTypeClasses()} ${
+          type === 'icon' ? 'z-10 mx-3 origin-top  rounded-md shadow-lg' : 'z-10 origin-top-right rounded-md shadow-lg'
         }`}
       >
         <div

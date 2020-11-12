@@ -6,8 +6,7 @@ function Container({ id, content }) {
   return (
     <div>
       <Header id={id} />
-
-      <header className="bg-white shadow">
+      <header className="bg-white shadow pt-15">
         <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl font-bold leading-tight text-gray-900">{content}</h1>
         </div>
