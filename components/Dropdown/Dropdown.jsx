@@ -9,8 +9,8 @@ function Dropdown({ type = 'iconless', triggererType, getHocS3Data }) {
   const ref = useRef();
   useEffect(() => {
     async function getData() {
-      const { profile } = await getHocS3Data();
-      setS3Data(profile);
+      const data = await getHocS3Data();
+      setS3Data(data[triggererType]);
     }
     getData();
   }, []);
