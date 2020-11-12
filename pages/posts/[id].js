@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Content from '../../components/Content';
-import Dropdown from '../../components/Dropdown';
+import Dropdown from '../../components/Dropdown/Dropdown';
 
 export default function MainContent({ id, content }) {
   return (
