@@ -50,5 +50,10 @@
       "date": "February 20, 2020",
       "color": "bg-green-400"
     }
+  ],
+  "headerItems": [
+    { "headerId": "dashboard", "text": "Dashboard", "href": "/posts/dashboard", "as": "/posts/dashboard" },
+    { "headerId": "team", "text": "Team", "href": "/posts/team", "as": "/posts/team" },
+    { "headerId": "projects", "text": "Projects", "href": "/posts/projects", "as": "/posts/projects" }
   ]
 }
