@@ -4,52 +4,64 @@ import Content from '../../components/Content';
 export default function MainContent({ id, content }) {
   return (
     <div>
-      <nav class="bg-indigo-700">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="flex items-center justify-between h-16">
-            <div class="flex items-center">
-              <div class="flex-shrink-0">
+      <nav className="bg-indigo-700">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16">
+            <div className="flex items-center">
+              <div className="flex-shrink-0">
                 <img
-                  class="h-8 w-8"
+                  className="h-8 w-8"
                   src="https://tailwindui.com/img/logos/v1/workflow-mark-on-brand.svg"
                   alt="Workflow logo"
                 />
               </div>
-              <div class="hidden md:block">
-                <div class="ml-10 flex items-baseline space-x-4">
-                  <Link
-                    href="/posts/dashboard"
-                    as="/posts/dashboard"
-                    class="px-3 py-2 rounded-md text-sm font-medium text-white bg-indigo-800 focus:outline-none focus:text-white focus:bg-indigo-600"
-                  >
-                    <a>Dashboard</a>
+              <div className="hidden md:block">
+                <div className="ml-10 flex items-baseline space-x-4">
+                  <Link href="/posts/dashboard" as="/posts/dashboard">
+                    <a
+                      className={`px-3 py-2 rounded-md text-sm font-medium ${
+                        id === 'dashboard'
+                          ? 'text-white bg-indigo-800 focus:outline-none focus:text-white focus:bg-indigo-600'
+                          : 'text-indigo-200 hover:text-white hover:bg-indigo-600 focus:outline-none'
+                      }`}
+                    >
+                      Dashboard
+                    </a>
                   </Link>
 
-                  <Link
-                    href="/posts/team"
-                    as="/posts/team"
-                    class="px-3 py-2 rounded-md text-sm font-medium text-indigo-200 hover:text-white hover:bg-indigo-600 focus:outline-none focus:text-white focus:bg-indigo-600"
-                  >
-                    <a>Team</a>
+                  <Link href="/posts/team" as="/posts/team">
+                    <a
+                      className={`px-3 py-2 rounded-md text-sm font-medium  ${
+                        id === 'team'
+                          ? 'text-white bg-indigo-800 focus:outline-none focus:text-white focus:bg-indigo-600'
+                          : 'text-indigo-200 hover:text-white hover:bg-indigo-600 focus:outline-none'
+                      }`}
+                    >
+                      Team
+                    </a>
                   </Link>
 
-                  <Link
-                    href="/posts/projects"
-                    as="/posts/projects"
-                    class="px-3 py-2 rounded-md text-sm font-medium text-indigo-200 hover:text-white hover:bg-indigo-600 focus:outline-none focus:text-white focus:bg-indigo-600"
-                  >
-                    <a>Projects</a>
+                  <Link href="/posts/projects" as="/posts/projects">
+                    <a
+                      className={`px-3 py-2 rounded-md text-sm font-medium ${
+                        id === 'projects'
+                          ? 'text-white bg-indigo-800 focus:outline-none focus:text-white focus:bg-indigo-600'
+                          : 'text-indigo-200 hover:text-white hover:bg-indigo-600 focus:outline-none'
+                      }`}
+                    >
+                      Projects
+                    </a>
                   </Link>
                 </div>
               </div>
             </div>
-            <div class="hidden md:block">
-              <div class="ml-4 flex items-center md:ml-6">
+            <div className="hidden md:block">
+              <div className="ml-4 flex items-center md:ml-6">
                 <button
-                  class="p-1 border-2 border-transparent text-indigo-300 rounded-full hover:text-white focus:outline-none focus:text-white focus:bg-indigo-600"
+                  className="p-1 border-2 border-transparent text-indigo-300 rounded-full hover:text-white focus:outline-none focus:text-white focus:bg-indigo-600"
                   aria-label="Notifications"
                 >
-                  <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                  <svg className="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                     <path
                       stroke-linecap="round"
                       stroke-linejoin="round"
@@ -60,16 +72,16 @@ export default function MainContent({ id, content }) {
                 </button>
 
                 {/* <!-- Profile dropdown --> */}
-                <div class="ml-3 relative">
+                <div className="ml-3 relative">
                   <div>
                     <button
-                      class="max-w-xs flex items-center text-sm rounded-full text-white focus:outline-none focus:shadow-solid"
+                      className="max-w-xs flex items-center text-sm rounded-full text-white focus:outline-none focus:shadow-solid"
                       id="user-menu"
                       aria-label="User menu"
                       aria-haspopup="true"
                     >
                       <img
-                        class="h-8 w-8 rounded-full"
+                        className="h-8 w-8 rounded-full"
                         src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                         alt=""
                       />
@@ -85,17 +97,17 @@ export default function MainContent({ id, content }) {
                       From: "transform opacity-100 scale-100"
                       To: "transform opacity-0 scale-95"
                   --> */}
-                  <div class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg">
-                    <div class="py-1 rounded-md bg-white shadow-xs">
-                      <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                  <div className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg">
+                    <div className="py-1 rounded-md bg-white shadow-xs">
+                      <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                         Your Profile
                       </a>
 
-                      <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                      <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                         Settings
                       </a>
 
-                      <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                      <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                         Sign out
                       </a>
                     </div>
@@ -103,15 +115,15 @@ export default function MainContent({ id, content }) {
                 </div>
               </div>
             </div>
-            <div class="-mr-2 flex md:hidden">
+            <div className="-mr-2 flex md:hidden">
               {/* <!-- Mobile menu button --> */}
-              <button class="inline-flex items-center justify-center p-2 rounded-md text-indigo-300 hover:text-white hover:bg-indigo-600 focus:outline-none focus:bg-indigo-600 focus:text-white">
+              <button className="inline-flex items-center justify-center p-2 rounded-md text-indigo-300 hover:text-white hover:bg-indigo-600 focus:outline-none focus:bg-indigo-600 focus:text-white">
                 {/* <!-- Menu open: "hidden", Menu closed: "block" --> */}
-                <svg class="block h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                <svg className="block h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
                 {/* <!-- Menu open: "block", Menu closed: "hidden" --> */}
-                <svg class="hidden h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                <svg className="hidden h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
@@ -123,61 +135,61 @@ export default function MainContent({ id, content }) {
 
           Open: "block", closed: "hidden"
       -->*/}
-        <div class="hidden md:hidden">
-          <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <div className="hidden md:hidden">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <a
               href="#"
-              class="block px-3 py-2 rounded-md text-base font-medium text-white bg-indigo-800 focus:outline-none focus:text-white focus:bg-gray-700"
+              className="block px-3 py-2 rounded-md text-base font-medium text-white bg-indigo-800 focus:outline-none focus:text-white focus:bg-gray-700"
             >
               Dashboard
             </a>
 
             <a
               href="#"
-              class="block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-white hover:bg-indigo-600 focus:outline-none focus:text-white focus:bg-indigo-600"
+              className="block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-white hover:bg-indigo-600 focus:outline-none focus:text-white focus:bg-indigo-600"
             >
               Team
             </a>
 
             <a
               href="#"
-              class="block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-white hover:bg-indigo-600 focus:outline-none focus:text-white focus:bg-indigo-600"
+              className="block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-white hover:bg-indigo-600 focus:outline-none focus:text-white focus:bg-indigo-600"
             >
               Projects
             </a>
 
             <a
               href="#"
-              class="block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-white hover:bg-indigo-600 focus:outline-none focus:text-white focus:bg-indigo-600"
+              className="block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-white hover:bg-indigo-600 focus:outline-none focus:text-white focus:bg-indigo-600"
             >
               Calendar
             </a>
 
             <a
               href="#"
-              class="block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-white hover:bg-indigo-600 focus:outline-none focus:text-white focus:bg-indigo-600"
+              className="block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-white hover:bg-indigo-600 focus:outline-none focus:text-white focus:bg-indigo-600"
             >
               Reports
             </a>
           </div>
-          <div class="pt-4 pb-3 border-t border-gray-700">
-            <div class="flex items-center px-5 space-x-3">
-              <div class="flex-shrink-0">
+          <div className="pt-4 pb-3 border-t border-gray-700">
+            <div className="flex items-center px-5 space-x-3">
+              <div className="flex-shrink-0">
                 <img
-                  class="h-10 w-10 rounded-full"
+                  className="h-10 w-10 rounded-full"
                   src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                   alt=""
                 />
               </div>
-              <div class="space-y-1">
-                <div class="text-base font-medium leading-none text-white">Tom Cook</div>
-                <div class="text-sm font-medium leading-none text-indigo-300">tom@example.com</div>
+              <div className="space-y-1">
+                <div className="text-base font-medium leading-none text-white">Tom Cook</div>
+                <div className="text-sm font-medium leading-none text-indigo-300">tom@example.com</div>
               </div>
             </div>
-            <div class="mt-3 px-2 space-y-1" role="menu" aria-orientation="vertical" aria-labelledby="user-menu">
+            <div className="mt-3 px-2 space-y-1" role="menu" aria-orientation="vertical" aria-labelledby="user-menu">
               <a
                 href="#"
-                class="block px-3 py-2 rounded-md text-base font-medium text-indigo-300 hover:text-white hover:bg-indigo-600 focus:outline-none focus:text-white focus:bg-indigo-600"
+                className="block px-3 py-2 rounded-md text-base font-medium text-indigo-300 hover:text-white hover:bg-indigo-600 focus:outline-none focus:text-white focus:bg-indigo-600"
                 role="menuitem"
               >
                 Your Profile
@@ -185,7 +197,7 @@ export default function MainContent({ id, content }) {
 
               <a
                 href="#"
-                class="block px-3 py-2 rounded-md text-base font-medium text-indigo-300 hover:text-white hover:bg-indigo-600 focus:outline-none focus:text-white focus:bg-indigo-600"
+                className="block px-3 py-2 rounded-md text-base font-medium text-indigo-300 hover:text-white hover:bg-indigo-600 focus:outline-none focus:text-white focus:bg-indigo-600"
                 role="menuitem"
               >
                 Settings
@@ -193,7 +205,7 @@ export default function MainContent({ id, content }) {
 
               <a
                 href="#"
-                class="block px-3 py-2 rounded-md text-base font-medium text-indigo-300 hover:text-white hover:bg-indigo-600 focus:outline-none focus:text-white focus:bg-indigo-600"
+                className="block px-3 py-2 rounded-md text-base font-medium text-indigo-300 hover:text-white hover:bg-indigo-600 focus:outline-none focus:text-white focus:bg-indigo-600"
                 role="menuitem"
               >
                 Sign out
@@ -203,13 +215,13 @@ export default function MainContent({ id, content }) {
         </div>
       </nav>
 
-      <header class="bg-white shadow">
-        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-          <h1 class="text-3xl font-bold leading-tight text-gray-900">{content}</h1>
+      <header className="bg-white shadow">
+        <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+          <h1 className="text-3xl font-bold leading-tight text-gray-900">{content}</h1>
         </div>
       </header>
       <main>
-        <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
           {/* <!-- Replace with your content --> */}
           <Content />
           {/* <!-- /End replace --> */}
