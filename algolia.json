@@ -1,0 +1,16 @@
+[
+  {
+    "id": "payMolly",
+    "text": "Payment to Molly Sanders",
+    "amount": "$20,000",
+    "currency": "USD",
+    "status": "success"
+  },
+  {
+    "id": "payBill",
+    "text": "Payment to Billy",
+    "amount": "$10,000",
+    "currency": "EUR",
+    "status": "success"
+  }
+]

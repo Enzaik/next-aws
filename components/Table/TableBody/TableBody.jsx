@@ -18,7 +18,6 @@ const TableBody = ({ hits, getHocS3Data, items }) => {
       setData(s3Data[items]['items']);
     }
     getData();
-    console.log(items);
   }, []);
 
   function renderComponent(hit) {
