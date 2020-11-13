@@ -6,7 +6,7 @@ import DashboardRow from './Rows/DashboardRow';
 
 function Dashboard({ pageData }) {
   return (
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class=" mx-auto ">
       <h2 class="text-lg leading-6 font-medium text-cool-gray-900">Overview</h2>
       <div class="mt-2 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
         <Card />
