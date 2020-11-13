@@ -6,21 +6,8 @@ import withS3Data from '../../hoc/withS3Data';
 import Link from 'next/link';
 import Dropdown from '../Dropdown/Dropdown';
 
-function Header({ currentPageId, getHocS3Data }) {
-  const [s3Data, setS3Data] = useState([
-    { headerId: 'Dashboard', href: '/posts/dashboard', as: '/posts/dashboard' },
-    { headerId: 'Team', href: '/posts/team', as: '/posts/team' },
-    { headerId: 'Projects', href: '/posts/projects', as: '/posts/projects' },
-  ]);
+function NavBar({ currentPageId, headerItems }) {
   const [isOpen, setIsOpen] = useState(false);
-  useEffect(() => {
-    async function getData() {
-      const { headerItems } = await getHocS3Data();
-      setS3Data(headerItems);
-    }
-    getData();
-  }, []);
-
   const handleMobileMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -40,8 +27,8 @@ function Header({ currentPageId, getHocS3Data }) {
             </div>
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-4">
-                {s3Data &&
-                  s3Data.map(({ href, as, headerId, text }) => {
+                {headerItems &&
+                  headerItems.map(({ href, as, headerId, text }) => {
                     return (
                       <Link href={href} as={as}>
                         <a
@@ -116,8 +103,8 @@ function Header({ currentPageId, getHocS3Data }) {
       -->*/}
       <div className={`${isOpen ? 'block' : 'hidden'} md:hidden`}>
         <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-          {s3Data &&
-            s3Data.map(({ href, as, headerId, text }) => (
+          {headerItems &&
+            headerItems.map(({ href, as, headerId, text }) => (
               <Link href={href} as={as}>
                 <a
                   className={` block px-3 py-2 rounded-md text-base font-medium text-white focus:outline-none focus:text-white focus:bg-gray-700 ${
@@ -171,4 +158,4 @@ function Header({ currentPageId, getHocS3Data }) {
   );
 }
 
-export default withS3Data(Header);
+export default NavBar;

@@ -1,13 +1,14 @@
 import React from 'react';
-import Table from '../Table/Table';
-import Dashboard from '../Dashboard';
+import dynamic from 'next/dynamic';
+
+const Dashboard = dynamic(() => import('../Dashboard'), { loading: () => <div>loading</div> });
+const Table = dynamic(() => import('../Table/Table'), { loading: () => <div>loading</div> });
 
 function Content({ currentPageId }) {
   function renderContent(currentPageId) {
     switch (currentPageId) {
       case 'dashboard':
         return <Dashboard />;
-
       default:
         return <Table items="projects" />;
     }
