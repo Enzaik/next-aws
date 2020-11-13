@@ -58,6 +58,37 @@
       { "id": "lastUpdated", "text": "Last Updated" }
     ]
   },
+  "dashboard": {
+    "items": [
+      {
+        "id": "graphql",
+        "text": "GraphQL API",
+        "helpText": "in Engineering",
+        "date": "March 17, 2020",
+        "color": "bg-pink-600"
+      },
+      {
+        "id": "ios",
+        "text": "iOS Apps",
+        "helpText": "in Development",
+        "date": "March 20, 2020",
+        "color": "bg-purple-600"
+      },
+      {
+        "id": "marketing",
+        "text": "Marketing",
+        "helpText": "in Marketing",
+        "date": "February 20, 2020",
+        "color": "bg-green-400"
+      }
+    ],
+    "columns": [
+      { "id": "transaction", "text": "Transaction", "important": true },
+      { "id": "amount", "text": "Amount", "important": true },
+      { "id": "status", "text": "Status" },
+      { "id": "date", "text": "Date", "important": true }
+    ]
+  },
   "headerItems": [
     {
       "headerId": "dashboard",

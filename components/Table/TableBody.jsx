@@ -5,7 +5,7 @@ import {
   // connectHitInsights
 } from 'react-instantsearch-dom';
 
-import Project from './Project/Project';
+import Project from '../Projects/Project/Project';
 import { getS3Data } from '../../utils/getS3Data'; //@todo: refactor
 
 const Projects = ({ hits }) => {

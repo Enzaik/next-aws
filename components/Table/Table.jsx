@@ -1,5 +1,5 @@
 import React from 'react';
-import Projects from '../Projects/Projects';
+import TableBody from './TableBody';
 import TableHeader from './TableHeader';
 
 function Table({ items }) {
@@ -7,7 +7,7 @@ function Table({ items }) {
     <div className="px-0 overflow-hidden md:rounded-lg shadow">
       <table className="min-w-full">
         <TableHeader items={items} />
-        <Projects />
+        <TableBody items={items} />
       </table>
     </div>
   );

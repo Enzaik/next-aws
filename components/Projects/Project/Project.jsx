@@ -1,8 +1,6 @@
 /* eslint react/prop-types: 0, react/react-in-jsx-scope: 0 */
 
 import React from 'react';
-import Dropdown from '../../Dropdown/Dropdown';
-
 export default function Project({ text, helpText, date, color }) {
   return (
     <tr>
