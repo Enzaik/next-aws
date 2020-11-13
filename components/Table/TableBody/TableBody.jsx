@@ -1,27 +1,15 @@
-import { useEffect, useState } from 'react';
-import withS3Data from '../../../hoc/withS3Data';
 import {
   // Configure, Highlight,
   connectHits,
   // connectHitInsights
 } from 'react-instantsearch-dom';
 
-// import TableRow from '../TableRow/TableRow';
 import ProjectRow from '../../Rows/ProjectRow';
 import DashboardRow from '../../Rows/DashboardRow';
 
-const TableBody = ({ hits, getHocS3Data, items }) => {
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    async function getData() {
-      const s3Data = await getHocS3Data();
-      setData(s3Data[items]['items']);
-    }
-    getData();
-  }, []);
-
+const TableBody = ({ hits, currentPageId }) => {
   function renderComponent(hit) {
-    switch (items) {
+    switch (currentPageId) {
       case 'projects':
         return <ProjectRow hit={hit} />;
 
@@ -40,4 +28,4 @@ const TableBody = ({ hits, getHocS3Data, items }) => {
   );
 };
 
-export default withS3Data(connectHits(TableBody));
+export default connectHits(TableBody);

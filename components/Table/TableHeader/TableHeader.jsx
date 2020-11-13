@@ -1,16 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import withS3Data from '../../../hoc/withS3Data';
 
-function TableHeader({ getHocS3Data, items }) {
-  const [columns, setColumns] = useState([]);
-  useEffect(() => {
-    async function getData() {
-      const projectsData = await getHocS3Data();
-      setColumns(projectsData[items]['columns']);
-    }
-    getData();
-  }, []);
-
+function TableHeader({ columns }) {
   return (
     <thead>
       <tr className="border-gray-200">
@@ -31,4 +21,4 @@ function TableHeader({ getHocS3Data, items }) {
   );
 }
 
-export default withS3Data(TableHeader);
+export default TableHeader;

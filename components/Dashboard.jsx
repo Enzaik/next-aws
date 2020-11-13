@@ -4,7 +4,7 @@ import TableHeader from './Table/TableHeader/TableHeader';
 import Table from './Table/Table';
 import DashboardRow from './Rows/DashboardRow';
 
-function Dashboard() {
+function Dashboard({ pageData }) {
   return (
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-lg leading-6 font-medium text-cool-gray-900">Overview</h2>
@@ -86,7 +86,7 @@ function Dashboard() {
       <div class="hidden sm:block">
         <div class="flex flex-col mt-2">
           <div class="align-middle min-w-full overflow-x-auto shadow overflow-hidden sm:rounded-lg">
-            <Table items="dashboard" />
+            <Table currentPageId="dashboard" pageData={pageData} />
             {/* <!-- Pagination --> */}
             <nav class="bg-white px-4 py-3 flex items-center justify-between border-t border-cool-gray-200 sm:px-6">
               <div class="hidden sm:block">

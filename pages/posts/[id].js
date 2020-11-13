@@ -13,7 +13,7 @@ export default function Page({ id, content, s3Data }) {
       <div>
         <NavBar currentPageId={id} headerItems={s3Data.headerItems} />
         <Header content={content} />
-        <Content currentPageId={id} />
+        <Content currentPageId={id} pageData={s3Data[id]} />
       </div>
     </InstantSearch>
   );
