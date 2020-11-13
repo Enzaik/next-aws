@@ -5,8 +5,8 @@ function TableHeader({ getHocS3Data, items }) {
   const [columns, setColumns] = useState([]);
   useEffect(() => {
     async function getData() {
-      const projectsData = await getHocS3Data(items);
-      setColumns(projectsData['projects']['columns']);
+      const projectsData = await getHocS3Data();
+      setColumns(projectsData[items]['columns']);
     }
     getData();
   }, []);
