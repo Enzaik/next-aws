@@ -11,6 +11,16 @@
   @apply bg-blue-500 text-white font-bold py-2 px-4 rounded;
 }
 
+.indigo-mac {
+  background: rgba(81, 69, 205, 0.9);
+  backdrop-filter: blur(10px);
+}
+
+.mac-ified {
+  opacity: 0.9;
+  backdrop-filter: blur(10px);
+}
+
 /* Start purging... */
 @tailwind utilities;
 /* Stop purging. */
