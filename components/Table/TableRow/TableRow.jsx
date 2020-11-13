@@ -1,7 +1,7 @@
 /* eslint react/prop-types: 0, react/react-in-jsx-scope: 0 */
 
 import React from 'react';
-export default function Project({ text, helpText, date, color }) {
+export default function TableRow({ text, helpText, date, color }) {
   return (
     <tr>
       <td className="px-6 py-3 max-w-0 w-full whitespace-no-wrap text-sm leading-5 font-medium text-gray-900">

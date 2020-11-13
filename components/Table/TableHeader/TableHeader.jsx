@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import withS3Data from '../../hoc/withS3Data';
+import withS3Data from '../../../hoc/withS3Data';
 
 function TableHeader({ getHocS3Data, items }) {
   const [columns, setColumns] = useState([]);

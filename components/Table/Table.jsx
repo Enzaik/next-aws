@@ -1,6 +1,6 @@
 import React from 'react';
-import TableBody from './TableBody';
-import TableHeader from './TableHeader';
+import TableBody from './TableBody/TableBody';
+import TableHeader from './TableHeader/TableHeader';
 
 function Table({ items }) {
   return (

@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from './Card';
-import TableHeader from './Table/TableHeader';
+import TableHeader from './Table/TableHeader/TableHeader';
 
 function Dashboard() {
   return (
