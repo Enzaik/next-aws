@@ -2,10 +2,7 @@ import React from 'react';
 import PinnedProject from './PinnedProject/PinnedProject';
 
 import algoliasearch from 'algoliasearch';
-import {
-  InstantSearch,
-  // browseObjects
-} from 'react-instantsearch-dom';
+import { InstantSearch } from 'react-instantsearch-dom';
 import PinnedProjects from './PinnedProjects';
 
 function PinnedProjectsContainer() {

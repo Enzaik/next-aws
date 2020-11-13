@@ -1,14 +1,20 @@
+import algoliasearch from 'algoliasearch';
+import { InstantSearch } from 'react-instantsearch-dom';
+
 import Content from '../../components/Content/Content';
 import NavBar from '../../components/NavBar/NavBar';
 import Header from '../../components/Header/Header';
 
 export default function Page({ id, content }) {
+  const searchClient = algoliasearch(`${process.env.ALGOLIA_ID}`, `${process.env.ALGOLIA_SECRET}`);
   return (
-    <div>
-      <NavBar currentPageId={id} />
-      <Header content={content} />
-      <Content currentPageId={id} />
-    </div>
+    <InstantSearch indexName={id} searchClient={searchClient}>
+      <div>
+        <NavBar currentPageId={id} />
+        <Header content={content} />
+        <Content currentPageId={id} />
+      </div>
+    </InstantSearch>
   );
 }
 

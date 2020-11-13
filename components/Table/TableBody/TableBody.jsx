@@ -6,9 +6,11 @@ import {
   // connectHitInsights
 } from 'react-instantsearch-dom';
 
-import TableRow from '../TableRow/TableRow';
+// import TableRow from '../TableRow/TableRow';
+import ProjectRow from '../../Rows/ProjectRow';
+import DashboardRow from '../../Rows/DashboardRow';
 
-const TableRows = ({ hits, getHocS3Data, items }) => {
+const TableBody = ({ hits, getHocS3Data, items }) => {
   const [data, setData] = useState([]);
   useEffect(() => {
     async function getData() {
@@ -16,16 +18,27 @@ const TableRows = ({ hits, getHocS3Data, items }) => {
       setData(s3Data[items]['items']);
     }
     getData();
+    console.log(items);
   }, []);
+
+  function renderComponent(hit) {
+    switch (items) {
+      case 'projects':
+        return <ProjectRow hit={hit} />;
+
+      default:
+        return <DashboardRow hit={hit} />;
+    }
+  }
 
   return (
     <tbody className="bg-white divide-y divide-gray-100">
       {hits &&
-        hits.map(({ text, helpText, date, color }) => {
-          return <TableRow text={text} helpText={helpText} date={date} color={color} />;
+        hits.map((hit) => {
+          return renderComponent(hit);
         })}
     </tbody>
   );
 };
 
-export default withS3Data(connectHits(TableRows));
+export default withS3Data(connectHits(TableBody));
