@@ -28,31 +28,44 @@
     { "text": "Get Desktop app", "type": "link" },
     { "text": "Notifications", "type": "link" }
   ],
-  "projects": [
-    {
-      "id": "graphql",
-      "text": "GraphQL API",
-      "helpText": "in Engineering",
-      "date": "March 17, 2020",
-      "color": "bg-pink-600"
-    },
-    {
-      "id": "ios",
-      "text": "iOS Apps",
-      "helpText": "in Development",
-      "date": "March 20, 2020",
-      "color": "bg-purple-600"
-    },
-    {
-      "id": "marketing",
-      "text": "Marketing",
-      "helpText": "in Marketing",
-      "date": "February 20, 2020",
-      "color": "bg-green-400"
-    }
-  ],
+  "projects": {
+    "items": [
+      {
+        "id": "graphql",
+        "text": "GraphQL API",
+        "helpText": "in Engineering",
+        "date": "March 17, 2020",
+        "color": "bg-pink-600"
+      },
+      {
+        "id": "ios",
+        "text": "iOS Apps",
+        "helpText": "in Development",
+        "date": "March 20, 2020",
+        "color": "bg-purple-600"
+      },
+      {
+        "id": "marketing",
+        "text": "Marketing",
+        "helpText": "in Marketing",
+        "date": "February 20, 2020",
+        "color": "bg-green-400"
+      }
+    ],
+    "columns": [
+      { "id": "project", "text": "Project", "important": true },
+      { "id": "members", "text": "Members", "important": true },
+      { "id": "lastUpdated", "text": "Last Updated" }
+    ]
+  },
   "headerItems": [
-    { "headerId": "dashboard", "text": "Dashboard", "href": "/posts/dashboard", "as": "/posts/dashboard" },
+    {
+      "headerId": "dashboard",
+      "text": "Dashboard",
+      "href": "/posts/dashboard",
+      "as": "/posts/dashboard",
+      "important": true
+    },
     { "headerId": "team", "text": "Team", "href": "/posts/team", "as": "/posts/team" },
     { "headerId": "projects", "text": "Projects", "href": "/posts/projects", "as": "/posts/projects" }
   ]

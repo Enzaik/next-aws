@@ -9,7 +9,7 @@ function Content({ currentPageId }) {
         return <Dashboard />;
 
       default:
-        return <Table />;
+        return <Table items="projects" />;
     }
   }
 

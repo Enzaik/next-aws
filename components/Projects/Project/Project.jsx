@@ -50,9 +50,9 @@ export default function Project({ text, helpText, date, color }) {
       <td className="hidden md:table-cell px-6 py-3 whitespace-no-wrap text-sm leading-5 text-gray-500 text-right">
         {date}
       </td>
-      <td className="pr-6">
-        {/* <Dropdown triggererType="menurow" />  */}
-      </td>
+      {/* <td className="pr-6">
+         <Dropdown triggererType="menurow" />  
+      </td>*/}
     </tr>
   );
 }

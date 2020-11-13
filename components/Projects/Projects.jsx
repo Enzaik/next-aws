@@ -6,14 +6,14 @@ import {
 } from 'react-instantsearch-dom';
 
 import Project from './Project/Project';
-import { getS3Data } from '../../utils/getS3Data';
+import { getS3Data } from '../../utils/getS3Data'; //@todo: refactor
 
 const Projects = ({ hits }) => {
   const [projects, setProjects] = useState([]);
   useEffect(() => {
     async function getData() {
       const projectsData = await getS3Data('projects');
-      setProjects(projectsData);
+      setProjects(projectsData['items']);
     }
     getData();
   }, []);
