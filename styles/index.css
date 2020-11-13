@@ -17,8 +17,7 @@
 }
 
 .mac-ified {
-  opacity: 0.9;
-  backdrop-filter: blur(10px);
+  --bg-opacity: 0.9;
 }
 
 /* Start purging... */

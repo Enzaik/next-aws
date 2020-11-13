@@ -7,7 +7,7 @@ export default function Page({ id, content }) {
     <div>
       <NavBar currentPageId={id} />
       <Header content={content} />
-      <Content />
+      <Content currentPageId={id} />
     </div>
   );
 }

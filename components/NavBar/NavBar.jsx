@@ -26,7 +26,8 @@ function Header({ currentPageId, getHocS3Data }) {
   };
 
   return (
-    <nav className={`indigo-mac md:fixed w-full ${isOpen ? 'block' : 'fixed'}`}>
+    // <nav className={`indigo-mac md:fixed w-full ${isOpen ? 'block' : 'fixed'}`}>
+    <nav className={`bg-indigo-700 md:fixed w-full ${isOpen ? 'block' : 'fixed'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
