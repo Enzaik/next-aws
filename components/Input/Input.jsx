@@ -12,7 +12,7 @@ function Input({ hits, currentRefinement, refine }) {
     refine(e.currentTarget.value);
   };
   return (
-    <div class="max-w-lg w-full ml-4 lg:max-w-xs">
+    <div class="max-w-lg w-full mx-4 md:mr-0 md:max-w-xs">
       <label for="search" class="sr-only">
         Search
       </label>
