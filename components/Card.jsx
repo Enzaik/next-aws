@@ -2,7 +2,7 @@ import React from 'react';
 
 function Card() {
   return (
-    <div class="bg-white overflow-hidden shadow rounded-lg">
+    <div class="bg-white overflow-hidden shadow sm:rounded-lg">
       <div class="p-5">
         <div class="flex items-center">
           <div class="flex-shrink-0">

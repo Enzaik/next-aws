@@ -7,13 +7,15 @@ import DashboardRow from './Rows/DashboardRow';
 function Dashboard({ pageData }) {
   return (
     <div class=" mx-auto ">
-      <h2 class="text-lg leading-6 font-medium text-cool-gray-900">Overview</h2>
+      <h2 class="ml-4 sm:ml-0 text-lg leading-6 font-medium text-cool-gray-900">Overview</h2>
       <div class="mt-2 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
         <Card />
         <Card />
         <Card />
       </div>
-      <h2 class="max-w-6xl mx-auto mt-8 text-lg leading-6 font-medium text-cool-gray-900">Recent activity</h2>
+      <h2 class="ml-4 sm:ml-0 max-w-6xl mx-auto mt-8 text-lg leading-6 font-medium text-cool-gray-900">
+        Recent activity
+      </h2>
 
       {/* <!-- Activity list (smallest breakopoint only) --> */}
       <div class="shadow sm:hidden">
