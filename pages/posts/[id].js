@@ -20,7 +20,7 @@ export default function Page({ id, content, s3Data }) {
 }
 
 export async function getStaticPaths() {
-  const paths = [{ params: { id: 'dashboard' } }, { params: { id: 'projects' } }];
+  const paths = [{ params: { id: 'dashboard' } }, { params: { id: 'team' } }, { params: { id: 'projects' } }];
   return {
     paths,
     fallback: false,

@@ -3,12 +3,15 @@ import dynamic from 'next/dynamic';
 
 const Dashboard = dynamic(() => import('../Dashboard'), { loading: () => <div>loading</div> });
 const Table = dynamic(() => import('../Table/Table'), { loading: () => <div>loading</div> });
+const Placeholder = dynamic(() => import('../Placeholder'), { loading: () => <div>loading</div> });
 
 function Content({ currentPageId, pageData }) {
   function renderContent(currentPageId) {
     switch (currentPageId) {
       case 'dashboard':
         return <Dashboard pageData={pageData} />;
+      case 'team':
+        return <Placeholder />;
       default:
         return <Table currentPageId="projects" pageData={pageData} />;
     }
